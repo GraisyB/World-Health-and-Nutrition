@@ -30,15 +30,10 @@ There are 425 distinct indicators.
 ```sql
 SELECT country_name, min(year) as MinYear,max(year) as MaxYear FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` group by country_name
 ```
-The data for each country ranges from year 1960 to 2020
 ![image](https://user-images.githubusercontent.com/87647811/131004880-c76abc4b-38c3-4b0d-a8b3-750182b749a9.png)
+The data for each country ranges from year 1960 to 2020
 
+## Business Related Questions
 
-
-
-
-## Business Questions
-
-* How many countries are being analysed?
-* Years covered
+* 
 * 
