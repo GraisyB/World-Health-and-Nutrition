@@ -36,7 +36,7 @@ The data for each country ranges from year 1960 to 2020
 # Healthcare, Population, Literacy and Sanitation in countries around the World!
 
 ## Healthcare 
-### What is the minimum, maximum and average Domestic general government health expenditure (% of general government expenditure) per country since year 2000**
+#### Q1. What is the minimum, maximum and average Domestic general government health expenditure (% of general government expenditure) per country since year 2000?
 ```sql
 SELECT country_name, min(value) as MinExp,max(value) as MaxExp,avg(value) as AvgExp
 FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
@@ -47,7 +47,7 @@ order by avg(value) desc
 The top 4 countries with the best government health expenditure are shown in the image below, the best being Costa Rica. 
 ![image](https://user-images.githubusercontent.com/87647811/131148819-c4612b4a-dbb7-4737-add5-c989385912ce.png)
 
-### In which year(s) does India have the highest of the following
+#### Q2. In which year(s) does India have the highest of the following?
 * Community health workers (per 1,000 people)
 * Hospital beds (per 1,000 people)
 * Physicians (per 1,000 people)
@@ -63,13 +63,30 @@ group by indicator_name)
 select b.indicator_name, b.country_name,b.value, b.year
 from MaxIndia m
 join `bigquery-public-data.world_bank_health_population.health_nutrition_population` b
-on b.value = m.value and country_name = 'India'
-
+on b.value = m.value 
+    and country_name = 'India'
+    and b.indicator_name = m.indicator_name
 ```
-![image](https://user-images.githubusercontent.com/87647811/131174580-6e3be0ea-77c9-40cf-9acf-2f8a60bd49e4.png)
+![image](https://user-images.githubusercontent.com/87647811/131174978-9d435d62-f9fe-4ae3-ba42-63d0dda158f7.png)
 
 ## Population
-Population growth (annual %)
+#### Q3. In which year did the South Asian countries have the highest Population growth (annual %)?
+```sql
+With population as (SELECT distinct country_name, max(value) as MaxPopulationGrowth
+from `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where 1=1
+    and indicator_name = 'Population growth (annual %)'
+    and country_name in ('Afghanistan', 'Bangladesh', 'Bhutan', 'India', 'Nepal', 'Pakistan', 'Sri Lanka','Maldives')
+group by country_name)
+
+select distinct b.country_name,p.MaxPopulationGrowth, b.year
+from population p
+join `bigquery-public-data.world_bank_health_population.health_nutrition_population` b
+on b.value = p.MaxPopulationGrowth 
+order by p.MaxPopulationGrowth desc
+```
+![image](https://user-images.githubusercontent.com/87647811/131176800-1e8158f8-f051-4230-b54e-14b2156d4b63.png)
+
 Net migration
 Population, female (% of total population)
 Population, male (% of total population)
