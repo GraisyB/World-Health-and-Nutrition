@@ -1,4 +1,4 @@
-## Exploring the data
+# Exploring the data
 
 * **Checking the columns in the data set**
 ```sql
@@ -33,22 +33,18 @@ SELECT country_name, min(year) as MinYear,max(year) as MaxYear FROM `bigquery-pu
 ![image](https://user-images.githubusercontent.com/87647811/131004880-c76abc4b-38c3-4b0d-a8b3-750182b749a9.png)
 The data for each country ranges from year 1960 to 2020
 
-## Business Related Questions
+# How is India doing in terms of Healthcare, Population, Literacy and Sanitation
 
-* Focussing on Healthcare - Which country has the highest of the following in the year 2000
+## Focussing on Healthcare
+* Which country has the highest of the following in the year 2000
 Community health workers (per 1,000 people)
 Hospital beds (per 1,000 people)
 Physicians (per 1,000 people)
 Specialist surgical workforce (per 100,000 population)
 Domestic general government health expenditure (% of general government expenditure)
-
-* Focussing on women
 Adolescent fertility rate (births per 1,000 women ages 15-19)
-Female headed households (% of households with a female head)
-Labor force, female (% of total labor force)
-Labor force, total
 
-* Population and Education
+* Population and Literacy
 Population growth (annual %)
 Net migration
 Population, female (% of total population)
@@ -57,6 +53,9 @@ Public spending on education, total (% of GDP)
 Literacy rate, adult female (% of females ages 15 and above)
 Literacy rate, adult male (% of males ages 15 and above)
 Literacy rate, adult total (% of people ages 15 and above)
+Female headed households (% of households with a female head)
+Labor force, female (% of total labor force)
+Labor force, total
 
 * Sanitation
 People practicing open defecation (% of population)
