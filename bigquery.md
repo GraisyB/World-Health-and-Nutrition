@@ -35,5 +35,37 @@ The data for each country ranges from year 1960 to 2020
 
 ## Business Related Questions
 
-* 
-* 
+* Focussing on Healthcare - Which country has the highest of the following in the year 2000
+Community health workers (per 1,000 people)
+Hospital beds (per 1,000 people)
+Physicians (per 1,000 people)
+Specialist surgical workforce (per 100,000 population)
+Domestic general government health expenditure (% of general government expenditure)
+
+* Focussing on women
+Adolescent fertility rate (births per 1,000 women ages 15-19)
+Female headed households (% of households with a female head)
+Labor force, female (% of total labor force)
+Labor force, total
+
+* Population and Education
+Population growth (annual %)
+Net migration
+Population, female (% of total population)
+Population, male (% of total population)
+Public spending on education, total (% of GDP)
+Literacy rate, adult female (% of females ages 15 and above)
+Literacy rate, adult male (% of males ages 15 and above)
+Literacy rate, adult total (% of people ages 15 and above)
+
+* Sanitation
+People practicing open defecation (% of population)
+People practicing open defecation, rural (% of rural population)
+People practicing open defecation, urban (% of urban population)
+Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)
+Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene, female (per 100,000 female population)
+Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene, male (per 100,000 male population)
+People using at least basic drinking water services (% of population)
+People using at least basic drinking water services, rural (% of rural population)
+People using at least basic drinking water services, urban (% of urban population)
+
