@@ -87,9 +87,29 @@ order by p.MaxPopulationGrowth desc
 ```
 ![image](https://user-images.githubusercontent.com/87647811/131176800-1e8158f8-f051-4230-b54e-14b2156d4b63.png)
 
-Net migration
-Population, female (% of total population)
-Population, male (% of total population)
+#### Q4. List the 5 countries with highest female population
+```sql
+SELECT country_name, avg(value) as AvgFemalePopulation
+from `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where 1=1
+    and indicator_name = 'Population, female (% of total population)'
+group by country_name
+order by AvgFemalePopulation desc
+limit 5
+```
+![image](https://user-images.githubusercontent.com/87647811/131177910-a2f176c0-478b-4f58-be9e-8b668fcbd7c7.png)
+  
+#### Q5. List the 5 countries with highest Male population
+```sql
+SELECT country_name, avg(value) as AvgMalePopulation
+from `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where 1=1
+    and indicator_name = 'Population, male (% of total population)'
+group by country_name
+order by AvgMalePopulation desc
+limit 5
+```
+![image](https://user-images.githubusercontent.com/87647811/131178146-7d932f8c-e6f9-459f-8ebd-8f6affc04b7e.png)
 
 ## Literacy
 Public spending on education, total (% of GDP)
