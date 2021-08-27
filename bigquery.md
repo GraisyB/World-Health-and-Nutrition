@@ -33,7 +33,7 @@ SELECT country_name, min(year) as MinYear,max(year) as MaxYear FROM `bigquery-pu
 ![image](https://user-images.githubusercontent.com/87647811/131004880-c76abc4b-38c3-4b0d-a8b3-750182b749a9.png)
 The data for each country ranges from year 1960 to 2020
 
-# How is India doing in terms of Healthcare, Population, Literacy and Sanitation
+# Healthcare, Population, Literacy and Sanitation in countries around the World!
 
 ## Healthcare
 * Which country has the highest of the following in the year 2000
@@ -41,7 +41,18 @@ Community health workers (per 1,000 people)
 Hospital beds (per 1,000 people)
 Physicians (per 1,000 people)
 Specialist surgical workforce (per 100,000 population)
-Domestic general government health expenditure (% of general government expenditure)
+* **Which countries have the highest and lowesr Domestic general government health expenditure (% of general government expenditure)**
+```sql
+SELECT country_name, value
+FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where indicator_name='Domestic general government health expenditure (% of general government expenditure)' and year = 2015
+order by value desc limit 1
+```
+Max : Costa Rica
+29.49176788
+Min: Equatorial Guinea
+1.33361387
+
 Adolescent fertility rate (births per 1,000 women ages 15-19)
 
 ## Population
@@ -59,7 +70,7 @@ Female headed households (% of households with a female head)
 Labor force, female (% of total labor force)
 Labor force, total
 
-* Sanitation
+## Sanitation
 People practicing open defecation (% of population)
 People practicing open defecation, rural (% of rural population)
 People practicing open defecation, urban (% of urban population)
