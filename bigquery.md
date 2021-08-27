@@ -16,9 +16,9 @@ Few reasons are,
   1.  This is because large countries have been divided by regions. Like 'Africa eastern and southern' is considered as one region, north and west are another.
   2.  Combined areas like 'Arab World' and 'Central Europe and the Baltics'
   3.  Segregation based on income is also done like 'Europe and central asia (excluding high income)'
-  4.  Average data is given against country_name 'World'
-*To ensure correctness in analysis, we will only focus on South Asian countries here.
-*The countries will be 'Afghanistan', 'Bangladesh', 'Bhutan', 'India', 'Nepal', 'Pakistan', 'Sri Lanka' and 'Maldives'
+  4.  Average data is given against country_name 'World'<br><br>
+**_To ensure correctness in analysis, we will only focus on South Asian countries here.<br>
+The countries will be 'Afghanistan', 'Bangladesh', 'Bhutan', 'India', 'Nepal', 'Pakistan', 'Sri Lanka' and 'Maldives'_**
 
 * **Various indicators we can obtain from this dataset**
 ```sql
@@ -167,5 +167,5 @@ order by FemaleHeadedFamilyPercentage desc
 ```
 ![image](https://user-images.githubusercontent.com/87647811/131182121-d5db20ec-2adf-4bdc-babb-72a676f01a2e.png)
 
-## The End
+### ------ The End -------
 
