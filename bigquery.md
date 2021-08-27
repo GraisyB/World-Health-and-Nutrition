@@ -35,7 +35,7 @@ The data for each country ranges from year 1960 to 2020
 
 # How is India doing in terms of Healthcare, Population, Literacy and Sanitation
 
-## Focussing on Healthcare
+## Healthcare
 * Which country has the highest of the following in the year 2000
 Community health workers (per 1,000 people)
 Hospital beds (per 1,000 people)
@@ -44,11 +44,13 @@ Specialist surgical workforce (per 100,000 population)
 Domestic general government health expenditure (% of general government expenditure)
 Adolescent fertility rate (births per 1,000 women ages 15-19)
 
-* Population and Literacy
+## Population
 Population growth (annual %)
 Net migration
 Population, female (% of total population)
 Population, male (% of total population)
+
+## Literacy
 Public spending on education, total (% of GDP)
 Literacy rate, adult female (% of females ages 15 and above)
 Literacy rate, adult male (% of males ages 15 and above)
