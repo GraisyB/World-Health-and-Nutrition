@@ -36,7 +36,7 @@ The data for each country ranges from year 1960 to 2020
 # Healthcare, Population, Literacy and Sanitation in countries around the World!
 
 ## Healthcare 
-* **What is the minimum, maximum and average Domestic general government health expenditure (% of general government expenditure) per country since year 2000**
+### What is the minimum, maximum and average Domestic general government health expenditure (% of general government expenditure) per country since year 2000**
 ```sql
 SELECT country_name, min(value) as MinExp,max(value) as MaxExp,avg(value) as AvgExp
 FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
@@ -47,14 +47,26 @@ order by avg(value) desc
 The top 4 countries with the best government health expenditure are shown in the image below, the best being Costa Rica. 
 ![image](https://user-images.githubusercontent.com/87647811/131148819-c4612b4a-dbb7-4737-add5-c989385912ce.png)
 
-* Which country has the highest of the following in the year 2000
-Community health workers (per 1,000 people)
-Hospital beds (per 1,000 people)
-Physicians (per 1,000 people)
-Specialist surgical workforce (per 100,000 population)
-Adolescent fertility rate (births per 1,000 women ages 15-19)
+### In which year(s) does India have the highest of the following
+* Community health workers (per 1,000 people)
+* Hospital beds (per 1,000 people)
+* Physicians (per 1,000 people)
+* Specialist surgical workforce (per 100,000 population)
+```sql
+WITH MaxIndia as (SELECT indicator_name, max(value) as value
+from `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where 1=1
+    and indicator_name in ('Community health workers (per 1,000 people)','Hospital beds (per 1,000 people)','Physicians (per 1,000 people)','Specialist surgical workforce (per 100,000 population)')
+    and country_name = 'India'
+group by indicator_name)
 
+select b.indicator_name, b.country_name,b.value, b.year
+from MaxIndia m
+join `bigquery-public-data.world_bank_health_population.health_nutrition_population` b
+on b.value = m.value and country_name = 'India'
 
+```
+![image](https://user-images.githubusercontent.com/87647811/131174580-6e3be0ea-77c9-40cf-9acf-2f8a60bd49e4.png)
 
 ## Population
 Population growth (annual %)
