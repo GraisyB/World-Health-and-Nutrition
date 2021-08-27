@@ -35,25 +35,26 @@ The data for each country ranges from year 1960 to 2020
 
 # Healthcare, Population, Literacy and Sanitation in countries around the World!
 
-## Healthcare
+## Healthcare 
+* **What is the minimum, maximum and average Domestic general government health expenditure (% of general government expenditure) per country since year 2000**
+```sql
+SELECT country_name, min(value) as MinExp,max(value) as MaxExp,avg(value) as AvgExp
+FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
+where indicator_name='Domestic general government health expenditure (% of general government expenditure)' and year >= 2000
+group by country_name
+order by avg(value) desc
+```
+The top 4 countries with the best government health expenditure are shown in the image below, the best being Costa Rica. 
+![image](https://user-images.githubusercontent.com/87647811/131148819-c4612b4a-dbb7-4737-add5-c989385912ce.png)
+
 * Which country has the highest of the following in the year 2000
 Community health workers (per 1,000 people)
 Hospital beds (per 1,000 people)
 Physicians (per 1,000 people)
 Specialist surgical workforce (per 100,000 population)
-* **Which countries have the highest and lowesr Domestic general government health expenditure (% of general government expenditure)**
-```sql
-SELECT country_name, value
-FROM `bigquery-public-data.world_bank_health_population.health_nutrition_population` 
-where indicator_name='Domestic general government health expenditure (% of general government expenditure)' and year = 2015
-order by value desc limit 1
-```
-Max : Costa Rica
-29.49176788
-Min: Equatorial Guinea
-1.33361387
-
 Adolescent fertility rate (births per 1,000 women ages 15-19)
+
+
 
 ## Population
 Population growth (annual %)
